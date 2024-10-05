@@ -9,8 +9,8 @@ import { albumsData } from '../assets/assets'
 const Display = () => {
     const displRef  = useRef()
     const location = useLocation()
-    const isAlbum = location.pathname.includes("album")
-    const albumId  = isAlbum ? location.pathname.slice(-1) : ""
+    const isAlbum = location.pathname.includes("album") //checking ki url me album work ha ya ni hai to true hoga
+    const albumId  = isAlbum ? location.pathname.slice(-1) : "" // Agar "album" URL mein hai, toh albumId ko URL ke last character se extract kiya ja raha hai (slice(-1) se), jisse humein album ka ID milta hai. Phir bgColor ko albumsData array se us ID ke base pe fetch kiya ja raha hai
     const bgColor = albumsData[Number(albumId)].bgColor
     
     useEffect(()=>{
@@ -30,7 +30,6 @@ const Display = () => {
                 <Route path='/' element={<DisplayHome />} />
                 <Route path='/album/:id' element={<DisplayAlbum />} />
             </Routes>
-
         </div>
     )
 }
