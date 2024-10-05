@@ -21,3 +21,10 @@ ab simple ek div bna li or poori particular album ka data display kara liya
             <h4>{albumData.desc}</h4>
         </div>
 </div>         -->
+
+
+# HOW TO ADD FUNCTIONALIY OF FORWARD AND BACKWARD BUTTON
+
+sirf un images par usenavigate use karke backward vaale ke andar -1
+<!-- onClick={()=>navigate(-1)} -->
+similarly forward vaale ke andar +1 ka use karke inhe funcional bna sakte hai
