@@ -35,3 +35,8 @@ just ek function bnayenge PlayWithId name ka PlayerContext me or usko export kr 
 or jo div se hum songs ko  map kara rhe the uspe onclick me PlayWithId ko call krke usme song ki id i.e item.id pass karne pr
 song according to their id ke hsaab se chlne lgenge same direct song jo maine pe hai to usme SongItem.jsx me jaake bhi same work 
 kr denge
+
+# How to change the song using prev icon and next icon
+
+make a function in PlayeContext name previous and check ki legth 0 se agar badi ho to usme track me se  1 minus kar do to song pichla vaala aa jayega similarly agar plus kar do to next song aa jayega inke do function bna lo previous or next or unhe export kar do or Player.jsx me get karke unnhe jis pr prevoious vaala icon hai usme onclick pe lga do on next vaale icon me onclick pe
+next vaala function call kr do 

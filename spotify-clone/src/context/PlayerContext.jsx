@@ -38,6 +38,28 @@ const PlayerConextProvider = (props) => {
        setPlayStatus(true)
     }
 
+    const previous = async()=>{
+        if (track.id > 0) {
+            await setTrack(songsData[track.id-1])
+            await audioRef.current.play()
+            setPlayStatus(true)
+        }
+    }
+
+    const next = async()=>{
+        if (track.id < songsData.length-1) {
+            await setTrack(songsData[track.id+1])
+            await audioRef.current.play()
+            setPlayStatus(true)
+        }
+    }
+
+    const seekSong = async (e) => {
+        console.log(e);
+        
+        audioRef.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth)*audioRef.current.duration)
+        
+    }
 
     useEffect(()=>{           // displaying the time of song and increase the time of song while playing  
        setTimeout(()=>{
@@ -58,7 +80,7 @@ const PlayerConextProvider = (props) => {
     },[audioRef])
 
     const contextValue = {
-        audioRef, seekBar, seekBg,track,setTrack,playStatus,setPlayStatus,time,setTime,play,pause,playWithId
+        audioRef, seekBar, seekBg,track,setTrack,playStatus,setPlayStatus,time,setTime,play,pause,playWithId,previous,next,seekSong
     }
     return (
         <PlayerContext.Provider value={contextValue}>
