@@ -32,7 +32,7 @@ const PlayerConextProvider = (props) => {
         setPlayStatus(false)
     }
 
-    const playWithId = async(id)=>{
+    const playWithId = async(id)=>{       // Playing the song by clickinng it "using the id of song"
        await setTrack(songsData[id])
        await audioRef.current.play()
        setPlayStatus(true)

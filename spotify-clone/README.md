@@ -28,3 +28,10 @@ ab simple ek div bna li or poori particular album ka data display kara liya
 sirf un images par usenavigate use karke backward vaale ke andar -1
 <!-- onClick={()=>navigate(-1)} -->
 similarly forward vaale ke andar +1 ka use karke inhe funcional bna sakte hai
+
+# How To Play Song On Clicking it
+
+just ek function bnayenge PlayWithId name ka PlayerContext me or usko export kr denge fir usko require kar lenge DisplayAlbum me 
+or jo div se hum songs ko  map kara rhe the uspe onclick me PlayWithId ko call krke usme song ki id i.e item.id pass karne pr
+song according to their id ke hsaab se chlne lgenge same direct song jo maine pe hai to usme SongItem.jsx me jaake bhi same work 
+kr denge
