@@ -54,11 +54,8 @@ const PlayerConextProvider = (props) => {
         }
     }
 
-    const seekSong = async (e) => {
-        console.log(e);
-        
-        audioRef.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth)*audioRef.current.duration)
-        
+    const seekSong = async (e) => {     
+        audioRef.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth)*audioRef.current.duration)  //jha se click kren vahien se song chala jaaye   
     }
 
     useEffect(()=>{           // displaying the time of song and increase the time of song while playing  
