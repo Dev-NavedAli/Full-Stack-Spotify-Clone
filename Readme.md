@@ -11,4 +11,6 @@ Now create the song model and album model in models folder and export both
 ab middleware me multer.js bna lenge or multer ka function bna ke export kr denge or jis route se hum image ya audio add kr rahe hai us route me is middleware ko lga denge
 <!-- for ex--songRouter.post('/add',upload.fields([{name:'image',maxCount:1},{name:'audio',maxCount:1}]),addSong) --> jitne bhi image honge utne object daal do 
 
-ab ek api bnayi songController.js me add song naam se jiska kaam hai songs ko add karna
+ab ek api bnayi songController.js me addSong naam se jiska kaam hai songs ko add karna
+ab ek api bnayi songController.js me listSong naam se jiska kaam hai jitne bhi ho unko database se nikalke list krana 
+ab ek api bnayi songController.js me removeSong naam se jiska kaam hai songs ko remove karna

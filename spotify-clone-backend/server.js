@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
 import songRouter from "./src/routes/songRoute.js";
+import albumRouter from "./src/routes/albumRoute.js"
 import connectDb from "./src/config/mongodb.js";
 import connectCloudinary from "./src/config/cloudinary.js";
 
@@ -38,6 +39,7 @@ app.use(cors(corsOptions));
 
 //initializing routes
 app.use('/api/song',songRouter)
+app.use('/api/album',albumRouter)
 
 app.get('/',(req,res)=>{
     res.send('Api Is Working')
