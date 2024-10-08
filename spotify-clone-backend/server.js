@@ -3,6 +3,7 @@ import express from "express"
 import cors from "cors"
 import songRouter from "./src/routes/songRoute.js";
 import connectDb from "./src/config/mongodb.js";
+import connectCloudinary from "./src/config/cloudinary.js";
 
 dotenv.config();
 
@@ -13,6 +14,11 @@ const port  = process.env.PORT || 4000;
 
 connectDb().then(()=>{
     console.log("connected to the db")
+}).catch((err)=>{
+    console.log(err)
+})
+connectCloudinary().then(()=>{
+    console.log("connected to cloudinary")
 }).catch((err)=>{
     console.log(err)
 })
