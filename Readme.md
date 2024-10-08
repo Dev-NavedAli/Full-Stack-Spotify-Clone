@@ -14,3 +14,4 @@ ab middleware me multer.js bna lenge or multer ka function bna ke export kr deng
 ab ek api bnayi songController.js me addSong naam se jiska kaam hai songs ko add karna
 ab ek api bnayi songController.js me listSong naam se jiska kaam hai jitne bhi ho unko database se nikalke list krana 
 ab ek api bnayi songController.js me removeSong naam se jiska kaam hai songs ko remove karna
+now same with album also make a controller a route for album and make 3 apis for add,list and remove the album
