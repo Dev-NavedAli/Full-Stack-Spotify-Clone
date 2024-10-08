@@ -25,7 +25,15 @@ connectCloudinary().then(()=>{
 
 //middlewares
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+    origin: "https://hoppscotch.io", // Allow only Hoppscotch's domain
+    methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
+    credentials: true,              // Allow credentials like cookies
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
+// app.use(cors())
 
 
 //initializing routes

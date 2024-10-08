@@ -7,4 +7,8 @@ ab mongodb.js naam ki file bnaayenge config folder me jisme hum apne mongodburl 
 
 ab config me cloudinary.js name se file bna lenge or usme ek function bnake cloudname,api_key,api_secret ko config karke function ko export kr denge or server.js me just connectDb ke neche call kra denge.
 
-Now create the song model in models folder and export both
+Now create the song model and album model in models folder and export both
+ab middleware me multer.js bna lenge or multer ka function bna ke export kr denge or jis route se hum image ya audio add kr rahe hai us route me is middleware ko lga denge
+<!-- for ex--songRouter.post('/add',upload.fields([{name:'image',maxCount:1},{name:'audio',maxCount:1}]),addSong) --> jitne bhi image honge utne object daal do 
+
+ab ek api bnayi songController.js me add song naam se jiska kaam hai songs ko add karna
