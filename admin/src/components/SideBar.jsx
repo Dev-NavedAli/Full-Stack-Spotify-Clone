@@ -11,22 +11,25 @@ const SideBar = () => {
 
             <div className='flex flex-col gap-4 mt-10'>
 
-                <div className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
-                    <img  src={assets.add_song} className='w-5 ' alt="" />
+                <NavLink to='/add-song' className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
+                    <img src={assets.add_song} className='w-5 ' alt="" />
                     <p className='hidden sm:block'>Add Song</p>
-                </div>
-                <div className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
-                    <img  src={assets.song_icon} className='w-5 ' alt="" />
+                </NavLink>
+
+                <NavLink to='/list-song' className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
+                    <img src={assets.song_icon} className='w-5 ' alt="" />
                     <p className='hidden sm:block'>List Song</p>
-                </div>
-                <div className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
-                    <img  src={assets.add_album} className='w-5 ' alt="" />
+                </NavLink>
+
+                <NavLink to='/add-album' className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
+                    <img src={assets.add_album} className='w-5 ' alt="" />
                     <p className='hidden sm:block'>Add Album</p>
-                </div>
-                <div className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
-                    <img  src={assets.album_icon} className='w-5 ' alt="" />
+                </NavLink>
+
+                <NavLink to='/list-album' className='flex items-center gap-2.5 text-gray-800 bg-white border-black p-2 pr-[max(8vw,10px)] drop-shadow-[-4px_4px_#00ff58] text-sm font-medium cursor-pointer '>
+                    <img src={assets.album_icon} className='w-5 ' alt="" />
                     <p className='hidden sm:block'>List Album</p>
-                </div>
+                </NavLink>
             </div>
 
 

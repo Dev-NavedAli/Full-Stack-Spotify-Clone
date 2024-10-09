@@ -1,8 +1,8 @@
-# React + Vite
+Making admin panel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+step -1--------making a folder name admin in root directory 
+step2-----------install react-router-dom,axios,react-toastify.
 
-Currently, two official plugins are available:
+step4-----install tailwind,and make two folders component and pages 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+step-5------- In pages folder make four files  AddAlbum.jsx , AddSong.jsx , ListAlbum.jsx , ListSong.jsx and in component make Sidebar.jsx.For react-router-dom  go to sideBar.jsx and in "Navlink" tag there is a property name to to="/add" then give the links as per need and Mount the SideBar in app.jsx And give ROutes and Route in App.jsx our react router dom will work succesfully
