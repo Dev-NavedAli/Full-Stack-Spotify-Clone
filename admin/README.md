@@ -14,4 +14,5 @@ step-7 make Navbar.jsx in components Folder and mount the navbar into app.jsx
 step8----design the AddSong.jsx and getting all form data using this
 <!-- onChange={(e) => setName(e.target.value)} value={name} -->
 
-step 9---------------
+step 9--------------- make a variable name <!-- export const url = 'http://localhost:4000' -->
+now import it on AddSong.jsx and send the data using axios  <!--const response = await axios.post(`${url}/api/song/add`,formData) --->
