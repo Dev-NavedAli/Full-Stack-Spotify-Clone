@@ -6,21 +6,31 @@ import { toast } from 'react-toastify'
 const ListSong = () => {
 
   const [data, setData] = useState([])
-
   const fetchSong = async () => {
-
     try {
-
       const response = await axios.get(`${url}/api/song/list`)
-
       if (response.data.success) {
         setData(response.data.song)
       }
     } catch (error) {
       toast.error("Error Occured")
     }
+  }
 
-
+  const removeSong = async(id)=>{
+    try {
+      const response = await axios.post(`${url}/api/song/remove`,{id})
+      if(response.data.success){
+        toast.success("Song Deleted Succesfully")
+        console.log(response)
+        fetchSong()
+      }else{
+        console.log("Something Went Wrong")
+        toast.error("Some Error is Occured")
+      }
+    } catch (error) {
+      toast.error("Error happen")
+    }
   }
 
   useEffect(() => {
@@ -47,7 +57,7 @@ const ListSong = () => {
               <p>{item.name}</p>
               <p>{item.album}</p>
               <p>{item.duration}</p>
-              <p>x</p>              
+              <p onClick={()=>removeSong(item._id)} className='ml-4 cursor-pointer text-lg'>x</p>              
             </div>
             )
           })

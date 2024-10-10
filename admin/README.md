@@ -16,3 +16,6 @@ step8----design the AddSong.jsx and getting all form data using this
 
 step 9--------------- make a variable name <!-- export const url = 'http://localhost:4000' -->
 now import it on AddSong.jsx and send the data using axios  <!--const response = await axios.post(`${url}/api/song/add`,formData) --->
+
+# Displaying the Song Data in Admin panel from database 
+ step10----<!-- const response = await axios.get(`${url}/api/song/list`)  --> is url ki help se data nikal jaayega or jo data ayyega use ek state varaible me save kra lenge or use map ki help se displayv kra denge
