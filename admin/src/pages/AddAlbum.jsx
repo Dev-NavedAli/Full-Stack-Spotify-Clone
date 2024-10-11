@@ -8,7 +8,7 @@ const AddAlbum = () => {
   const [image, setImage] = useState(false)
   const [name, setName] = useState('')
   const [desc, setDesc] = useState('')
-  const [bgColour, setBgColour] = useState('#ffffff')
+  const [colour, setColour] = useState('#121212')
   const [loading, setLoading] = useState(false)
 
 
@@ -21,7 +21,7 @@ const AddAlbum = () => {
       formData.append('image', image)
       formData.append("name",name)
       formData.append("desc",desc)
-      formData.append("bgColour",bgColour)
+      formData.append("bgColour",colour)
 
       const response = await axios.post(`${url}/api/album/add`,formData)
 
@@ -30,10 +30,9 @@ const AddAlbum = () => {
         setImage(false)
         setName("")
         setDesc("")
-        setBgColour("")
+        setColour("")
       }else{
         toast.error("Something Went Wrong")
-        console.log("Some error happen")
       }
 
     } catch (error) {
@@ -67,7 +66,7 @@ const AddAlbum = () => {
       </div>
       <div className="flex flex-col gap-3">
         <p>Background Colour </p>
-        <input onChange={(e)=>setBgColour(e.target.value)} value={bgColour} type="color" />
+        <input onChange={(e)=>setColour(e.target.value)} value={colour} type="color" />
       </div>
       <button type='submit' className='text-base bg-black text-white py-2.5 px-14 cursor-pointer mb-8 rounded-lg'>Add</button>
     </form>

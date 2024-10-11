@@ -22,7 +22,6 @@ const ListSong = () => {
       const response = await axios.post(`${url}/api/song/remove`,{id})
       if(response.data.success){
         toast.success("Song Deleted Succesfully")
-        console.log(response)
         fetchSong()
       }else{
         console.log("Something Went Wrong")
