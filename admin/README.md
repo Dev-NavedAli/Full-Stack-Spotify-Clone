@@ -21,3 +21,18 @@ now import it on AddSong.jsx and send the data using axios  <!--const response =
  step10----<!-- const response = await axios.get(`${url}/api/song/list`)  --> is url ki help se data nikal jaayega or jo data ayyega use ek state varaible me save kra lenge or use map ki help se display kra denge
 
  step11------same aise hi album ko display kra lenge
+
+ # last step - how to integrate frontend for getting data from the backend
+
+step1-----install axios in frontend
+
+step2------ Go to "PlayerContext" make a variable name "url" jisme backend ka url hoga or do 2 "statevariable" bna liye 
+
+step3----- uske baad jo data hum direct assets se le the us import ko hta ke axios ki import likh denge 
+
+step4---- or uske baad do async func bnayege getSongsData or getAlbumsData name se  jinki help se hum songs,albums ka data fetch kar skein with the help of axios uske baad jo data aaye unhe state variable me daal denge
+
+step5-----  uske baad in dono func ko use effect me call kar liya or unko "Contextvalue" me daal diya 
+
+
+step6-------

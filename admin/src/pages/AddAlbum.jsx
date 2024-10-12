@@ -6,31 +6,31 @@ import { toast } from 'react-toastify'
 
 const AddAlbum = () => {
   const [image, setImage] = useState(false)
+  const [colour, setColour] = useState('#121212')
   const [name, setName] = useState('')
   const [desc, setDesc] = useState('')
-  const [colour, setColour] = useState('#121212')
   const [loading, setLoading] = useState(false)
 
 
   const onSubmitHandler = async(e)=>{
-    setLoading(true)
     e.preventDefault()
+    setLoading(true)
 
     try {
       const formData = new FormData()
-      formData.append('image', image)
       formData.append("name",name)
       formData.append("desc",desc)
+      formData.append('image', image)
       formData.append("bgColour",colour)
 
       const response = await axios.post(`${url}/api/album/add`,formData)
 
       if(response.data.success){
         toast.success("Album Added")
+        setDesc("")
         setImage(false)
         setName("")
-        setDesc("")
-        setColour("")
+        // setColour("")
       }else{
         toast.error("Something Went Wrong")
       }
