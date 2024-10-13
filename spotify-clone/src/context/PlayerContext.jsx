@@ -86,6 +86,7 @@ const PlayerConextProvider = (props) => {
             const response = await axios.get(`${url}/api/album/list`)
             setAlbumsData(response.data.allAlbum)
         } catch (error) {
+            console.log(error);
             
         }
     }
@@ -123,7 +124,7 @@ const PlayerConextProvider = (props) => {
         time,setTime,
         play,pause,playWithId,
         previous,next,seekSong,
-        songsData,albumsData
+        songsData,albumsData,
     }
     return (
         <PlayerContext.Provider value={contextValue}>
