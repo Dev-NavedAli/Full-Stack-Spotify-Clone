@@ -9,7 +9,7 @@ const PlayerConextProvider = (props) => {
     const seekBar = useRef()
 
 
-    const url = 'http://localhost:4000';
+    const url = 'https://spotify-backend-self.vercel.app';
 
     const [songsData,setSongsData] = useState([])
     const [albumsData,setAlbumsData] = useState([])
