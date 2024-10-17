@@ -1,10 +1,28 @@
 import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
 import { PlayerContext } from '../context/PlayerContext'
+import { FaPlus , FaMinus , FaVolumeMute } from "react-icons/fa";
 
 const Player = () => {
 
-    const {seekBar,seekBg,playStatus,play,pause,track,time,previous,next,seekSong} = useContext(PlayerContext)
+    const {seekBar,seekBg,playStatus,play,pause,track,time,previous,next,seekSong,volume,setVolume,toggleMute,isMuted} = useContext(PlayerContext)
+
+    const volumeUp = ()=>{
+        if (volume < 1) {
+            setVolume(prevVolume => Math.min(prevVolume + 0.1, 1));
+        }
+    }
+
+    const volumeDown = ()=>{
+        if (volume > 0) {
+            setVolume(prevVolume => Math.max(prevVolume - 0.1, 0));
+        }
+    }
+
+    const handleVolume = (e)=>{
+        setVolume(e.target.value)
+    }
+
   return track ? (
     <div className='h-[10%] bg-black flex justify-between items-center text-white px-4 '>
         <div className='hidden lg:flex items-center gap-4'>
@@ -38,9 +56,12 @@ const Player = () => {
             <img className='w-4' src={assets.mic_icon} alt="" />
             <img className='w-4' src={assets.queue_icon} alt="" />
             <img className='w-4' src={assets.speaker_icon} alt="" />
-            <img className='w-4' src={assets.volume_icon} alt="" />
-            <div className="w-20 bg-slate-50 h-1 rounded"></div>
-            <img className='w-4' src={assets.mini_player_icon} alt="" />
+            <button onClick={toggleMute}>{isMuted ? (<img className='w-4' src={assets.volume_icon} alt="" />) : (<FaVolumeMute className='w-4'/>)}</button>
+            
+            <FaMinus onClick={volumeDown} className='cursor-pointer' />
+            <input className='w-20 bg-slate-50 h-1 rounded ' type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolume} id='volume' />
+            <FaPlus onClick={volumeUp} className='cursor-pointer' />
+            
             <img className='w-4' src={assets.zoom_icon} alt="" />
         </div>
     </div>

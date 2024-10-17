@@ -68,7 +68,7 @@ const DisplayHome = () => {
 
                 <div className='relative'>
                     <div className='flex overflow-x-auto scroll-smooth'>
-                        {showLeftArrow && (<button onClick={leftScroll} className="cursor-pointer">
+                        {showLeftArrow && (<button onClick={leftScroll}  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 hover:bg-opacity-75 p-2 rounded-full">
                             <FaArrowLeft size={45} />
                         </button>)}
                         <div ref={scrollContainerRef} className="flex space-x-4 overflow-x-auto scroll-smooth w-full">
@@ -76,7 +76,7 @@ const DisplayHome = () => {
                                 <AlbumItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
                             ))}
                         </div>
-                        {showRightArrow && (<button className="cursor-pointer">
+                        {showRightArrow && (<button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-opacity-50 hover:bg-opacity-75 p-2 rounded-full">
                             <FaArrowRight onClick={RightScroll} size={45} />
                         </button>)}
 
@@ -86,8 +86,8 @@ const DisplayHome = () => {
 
             <div className='mb-4'>
                 <h1 className='my-5 font-bold text-2xl'>Today Biggest Hits</h1>
-                <div className='flex overflow-auto'>
-                    {showSongLeftArrow && (<button onClick={songLeftScroll} className="hidden sm:inline-block cursor-pointer">
+                <div className=' relative flex overflow-auto'>
+                    {showSongLeftArrow && (<button onClick={songLeftScroll} className="hidden sm:inline-block cursor-pointer ">
                         <FaArrowLeft size={45} />
                     </button>)}
 

@@ -27,6 +27,9 @@ const PlayerConextProvider = (props) => {
         }
     })
 
+    const [volume,setVolume] = useState(1) //deafault value 100% rhegi
+    const [isMuted,setIsMuted] = useState(false)
+
     const play = ()=>{
         audioRef.current.play()
         setPlayStatus(true)
@@ -47,7 +50,18 @@ const PlayerConextProvider = (props) => {
        setPlayStatus(true)
     }
 
+    const toggleMute = ()=>{
+        if(isMuted){
+            setIsMuted(false)
+            setVolume(1)
+        }else{
+            setVolume(0)
+            setIsMuted(true)
+        }
+    }
+
     const previous = async()=>{
+
         songsData.map(async (item,index)=>{
             if(track._id == item._id && index > 0){
                 await setTrack(songsData[index-1])
@@ -115,6 +129,12 @@ const PlayerConextProvider = (props) => {
         getAlbumsData();
     },[])
 
+    useEffect(()=>{
+        if(audioRef.current){
+            audioRef.current.volume = volume     //for volume
+        }
+    },[volume])
+
     const contextValue = {
         audioRef,
         seekBar,
@@ -125,6 +145,8 @@ const PlayerConextProvider = (props) => {
         play,pause,playWithId,
         previous,next,seekSong,
         songsData,albumsData,
+        volume,setVolume,
+        toggleMute,isMuted,
     }
     return (
         <PlayerContext.Provider value={contextValue}>

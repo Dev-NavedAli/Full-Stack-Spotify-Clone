@@ -6,3 +6,8 @@
 ::-webkit-scrollbar{
     display: none;
 }
+
+#volume{
+    accent-color: #1DB954;   
+}
+  
